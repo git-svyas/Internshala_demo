@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/availableWorkshops">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.internshala_demo.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_dashboard"
+            app:destination="@id/dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/availableWorkshops"
+        android:name="com.example.internshala_demo.AvailableWorkshops"
+        android:label="fragment_available_workshops"
+        tools:layout="@layout/fragment_available_workshops" >
+        <action
+            android:id="@+id/action_availableWorkshops_to_dashboard"
+            app:destination="@id/dashboard" />
+        <action
+            android:id="@+id/action_availableWorkshops_to_signup"
+            app:destination="@id/signup" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.example.internshala_demo.Signup"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signup_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_signup_to_availableWorkshops"
+            app:destination="@id/availableWorkshops" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.example.internshala_demo.Dashboard"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboard_to_availableWorkshops"
+            app:destination="@id/availableWorkshops" />
+    </fragment>
+</navigation>
